@@ -1,0 +1,33 @@
+@import 'src/color.scss';
+
+
+.mat-toolbar {
+    background-color: $menu-color;
+    max-height: 40px;
+}
+
+.page-toolbar {
+    background-color: $menu-color;
+    max-height: 70px;
+    margin-bottom: 13px;
+
+    .heading {
+        padding-top: 9px;
+        position: absolute;
+    }
+
+    .detail {
+        padding: 10px;
+        font-size: 12px;
+        background: #F8FBFD;
+        height: 15px;
+    }
+
+}
+
+
+.mat-mdc-icon-button.mat-mdc-button-base {
+    width: 47px;
+    height: 25px;
+    padding: 4px;
+}

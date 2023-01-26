@@ -1,18 +1,63 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+<!-- <div class="top-menu">
+  <div class="logo">
+    logo
+  </div>
+  <div class="right-icons">
+    right-icons
+  </div>
+</div> -->
+
+<mat-toolbar color="menu-toolbar">
+
+  <mat-toolbar-row>
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>
+      <img src="assets/images/logo.png" />
+    </span>
+    <span class="menu-spacer"></span>
+    <mat-icon class="menu-icon"> notifications_none</mat-icon>
+    <!-- <mat-icon class="menu-icon">delete</mat-icon> -->
+    <div class="profile">AP</div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-drawer-container class="menu-container" autosize>
+  <mat-drawer #drawer class="menu-sidenav" mode="side" opened="true">
+    <div class="main-menu-heading">
+      <span class="menu-heading"> Menu </span>
+    </div>
+    <hr class="menu">
+    <div class="sub-menu">
+      <div class="link cp" [routerLink]="['/', 'app', 'home']" routerLinkActive="active">
+        <mat-icon> apps</mat-icon>
+
+        <span>
+          Home
+        </span>
+      </div>
+      <div class="link cp" [routerLink]="['/', 'app', 'user']" routerLinkActive="active">
+        <mat-icon> apps</mat-icon>
+        Users
+      </div>
+      <div class="link cp" [routerLink]="['/', 'app', 'blog']" routerLinkActive="active">
+        <mat-icon> apps</mat-icon>
+        Blog
+      </div>
+    </div>
+
+    <!-- <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
     <button (click)="showFiller = !showFiller" mat-raised-button>
       Toggle extra text
-    </button>
+    </button> -->
   </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
+  <div class="menu-sidenav-content">
+    <!-- <button type="button" mat-button (click)="drawer.toggle()">
       Toggle sidenav
-    </button>
+    </button> -->
     <router-outlet></router-outlet>
   </div>
-
 </mat-drawer-container>
-

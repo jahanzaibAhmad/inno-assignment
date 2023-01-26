@@ -35,7 +35,26 @@ $inno-assignment-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
+@import 'color.scss';
+
 html, body { 
   // height: 100%; 
+  color:  $text-color;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'proxima-nova', sans-serif; }
+
+
+
+hr.menu {
+  color: #f0f0f0;
+  border: 1px solid;
+}
+
+.mat-grid-tile{
+  background-color: $white;
+  border-radius: 5px;
+}
+
+.cp{
+  cursor: pointer;
+}

@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeFormComponent } from './home-form/home-form.component';
+import { BlogsRoutingModule } from './blogs-routing.module';
+import { BlogFormComponent } from './blog-form/blog-form.component';
 import { SharedModule } from '@app/shared/module/shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    HomeFormComponent
+    BlogFormComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    BlogsRoutingModule,
     SharedModule
   ]
 })
-export class HomeModule { }
+export class BlogsModule { }

@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
+import { PageBarComponent } from '@app/page-bar/page-bar.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PageBarComponent
+  ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
   ], 
   exports: [
-    MaterialModule
+    MaterialModule,
+    PageBarComponent
   ]
 })
 export class SharedModule { }

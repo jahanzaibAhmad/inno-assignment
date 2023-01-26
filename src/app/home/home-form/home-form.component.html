@@ -1,1 +1,54 @@
-<p>home-form works!</p>
+<app-page-bar> </app-page-bar>
+
+<!-- <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile> -->
+
+<mat-grid-list cols="4" rowHeight="100px" gutterSize="13px" class="grid-block">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+        <!-- <img src="./assets/Dotnettricks.png"> -->
+
+        <mat-grid-tile-header>
+            <span class="material-icons">
+                {{tile.icon}}
+            </span>
+        </mat-grid-tile-header>
+        <span class="total"> {{tile.amount}}</span>
+        <mat-grid-tile-footer>
+            <span class="total-text">{{tile.text}} </span>
+        </mat-grid-tile-footer>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+
+<br>
+
+<div class="grid-header">
+    <span class="material-icons">
+        apps
+    </span> Recent Blogs
+</div>
+
+
+<mat-grid-list cols="4" rowHeight="100px" gutterSize="0px">
+
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        <mat-card-content>
+            <img mat-card-image src="assets/images/home-industry.png" />
+            
+            
+        </mat-card-content>
+        <mat-card-footer>
+        <p>{{'Lorem ipsum dolor sit amet'}}</p>
+        </mat-card-footer>
+
+    </mat-grid-tile>
+
+</mat-grid-list>

@@ -1,15 +1,92 @@
-.example-container {
-      height: calc(100vh - 0px);
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    padding: 30px;
-    height: 100%;
+@import 'src/color.scss';
+
+.menu-container {
+  height: calc(100vh - 65px);
+  box-shadow: 3px 3px 3px 2px #888888;
+  background-color: $background-color;
+}
+
+.menu-sidenav-content {
+  padding: 13px;
+  // height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.menu-sidenav {
+  padding: 0px;
+  min-width: 200px;
+
+}
+
+.menu-heading {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #253244;
+  margin: 8px 0px 0px 13px;
+}
+
+.main-menu-heading {
+  border-left: 4px solid $primary-color;
+}
+
+.sub-menu {
+  .link {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
     align-items: center;
-    justify-content: center;
+    margin: 10px 10px 10px 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 30px;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+    border-radius: 5px;
+    color:  $primary-color;
+
+    &.active {
+      background: $primary-color;
+      color:  $white;
+
+    }
+
+    span {
+
+    }
   }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
+
+  // color: #FFFFFF;
+}
+
+
+.top-logo {
+  position: absolute;
+  width: 154px;
+  height: 30px;
+  left: 33px;
+  top: 23px;
+}
+
+.menu-icon {
+  padding: 0 14px;
+}
+
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color: $menu-color;
+}
+
+.profile {
+  background-color: $primary-color;
+  color: $white;
+  padding: 8px;
+  border-radius: 50%;
+}
