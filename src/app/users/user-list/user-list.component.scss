@@ -1,0 +1,24 @@
+.card-body{
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid blue;
+    margin: 0px;
+}
+
+.name{
+    position: absolute;
+    top: 25px;
+    margin-left: 15px;
+}
+
+.pr{
+    position: relative;
+    min-width: 200px;
+}

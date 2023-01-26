@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card m-5 p-3">
+        <div class="card-body">
+            <table  class="row-border hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of allUsers">
+                    <td>{{ user.id }}</td>
+                    <td class="pr"> <img class="user-img" [src]="user.image" alt="" srcset=""> <span class="name"> {{ user.name }} </span></td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.address.street }}, {{ user.address.city }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
