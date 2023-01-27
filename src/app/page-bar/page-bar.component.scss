@@ -8,8 +8,8 @@
 
 .page-toolbar {
     background-color: $menu-color;
-    max-height: 70px;
     margin-bottom: 13px;
+    overflow: hidden;
 
     .heading {
         padding-top: 9px;
@@ -21,6 +21,7 @@
         font-size: 12px;
         background: $page-bar-color;
         height: 15px;
+        margin-bottom: 10px;
     }
 }
 

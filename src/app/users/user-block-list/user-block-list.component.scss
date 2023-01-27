@@ -3,6 +3,7 @@
 .card-row{
     display: flex;
     margin-top: 50px;
+    flex-wrap: wrap;
     .card{
         margin: 40px 20px;
         width: 250px;

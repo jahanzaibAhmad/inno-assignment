@@ -48,7 +48,9 @@
     margin: 10px 10px 10px 10px;
     border-radius: 5px;
     color:  $primary-color;
-
+    display: flex;
+    padding-left: 7px;
+    
     &.active {
       background: $primary-color;
       color:  $white;
