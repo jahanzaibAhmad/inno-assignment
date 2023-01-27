@@ -1,6 +1,8 @@
 <app-page-bar (toggleClick)="toggle($event)" [heading]="title" [description]="description" [isGridBtn]="true"> </app-page-bar>
 
 
+<!-- Added two component user-list and user-block-list as dump component -->
+
 <app-user-list  [hidden]="isGrid" [allUsers]="allUsers"></app-user-list>
 <app-user-block-list *ngIf="isGrid" [allUsers]="allUsers"></app-user-block-list>
 
