@@ -37,6 +37,8 @@ $inno-assignment-theme: mat.define-light-theme((
 
 @import 'color.scss';
 
+/** We use Mixing, function, etc to make our css dynamic */
+
 html, body { 
   // height: 100%; 
   color:  $text-color;

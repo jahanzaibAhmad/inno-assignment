@@ -32,6 +32,7 @@ export class UserListComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy(): void {
+    /** unsubscribing all Subscribe observable */
     this.dtTrigger.unsubscribe();
   }
 }

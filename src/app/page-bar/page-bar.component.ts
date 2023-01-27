@@ -9,6 +9,7 @@ export class PageBarComponent {
 
 @Input() heading!: string;
 @Input() description!: string;
+@Input() isGridBtn: boolean = false;
 
   @Output() toggleClick = new EventEmitter<boolean>();
 

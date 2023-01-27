@@ -8,13 +8,10 @@ import { UsersService } from '../shared/users.service';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit, OnDestroy {
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject<any>();
-
   allUsers: any;
   isGrid: boolean = false;
 
-  title: string = 'Home';
+  title: string = 'Home'; /** Title/Breadcrumb and Descrition also come from rounte if define there and getting directly in page bar componenet */
   description: string = '';
   subscription: Subscription[] = [];
 
@@ -45,7 +42,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+    /** unsubscribing all Subscribe observable */
     this.subscription.forEach(sub => sub.unsubscribe());
   }
 

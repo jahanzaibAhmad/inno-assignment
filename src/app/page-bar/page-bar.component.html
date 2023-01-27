@@ -1,15 +1,9 @@
-<!-- <mat-toolbar>
-    <button mat-icon-button >
-        <mat-icon>apps</mat-icon>
-    </button>
-    <span>Home</span>
-</mat-toolbar> -->
 
 <div class="page-toolbar"> <button mat-icon-button>
         <mat-icon>apps</mat-icon>
     </button>
     <span class="heading"> {{heading}}</span>
-    <span class="list-btn">
+    <span class="list-btn" *ngIf="isGridBtn">
         <span class="material-icons" [class.selected]="!isGrid"  (click)="toggle(false)">
             list
         </span>

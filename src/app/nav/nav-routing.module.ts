@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
-
+/** I have consider each tab as a seperate module and lazy load them to increase the performance */
 const myChildren: any = [
   {
     path: 'home',

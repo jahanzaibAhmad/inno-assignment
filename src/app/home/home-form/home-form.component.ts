@@ -8,13 +8,16 @@ import { HomeService } from '../shared/home.service';
   selector: 'app-home-form',
   templateUrl: './home-form.component.html',
   styleUrls: ['./home-form.component.scss']
+  /** We may use changedetection strategy here on push if we have manp parent child component which are effecting our performance performance */
 })
 
+/** Note: I have may used "any" datatype due to shortage of time */
+
 export class HomeFormComponent implements OnInit, OnDestroy {
-  tiles!: HomeModel[];
+  tiles!: HomeModel[]; /** Each model define as interface */
   blogInfo!: BlogsModel[];
   subscription: Subscription[] = [];
-  title: string = 'Home';
+  title: string = 'Home';/** Title/Breadcrumb and Descrition also come from rounte if define there and getting directly in page bar componenet */
   description: string = 'Home Page Description';
 
 
@@ -28,6 +31,7 @@ export class HomeFormComponent implements OnInit, OnDestroy {
   }
 
   getCards() {
+    /** Getting data from (https://jsonplaceholder.typicode.com/) bt forking on my git hub https://github.com/jahanzaibAhmad/demoapi*/
     this.subscription.push(this.homeService.getCards(1).subscribe({
       next: (data) => {
         this.tiles = data?.data;
@@ -39,7 +43,11 @@ export class HomeFormComponent implements OnInit, OnDestroy {
   }
 
 
-  getBlogs() {
+  getBlogs() { 
+    /** we are not adding cross service to make it loosely couple (So, I rewrite blog method in homeService), 
+     * we may use shared service in global shared folder */
+
+    /**Getting data from (https://jsonplaceholder.typicode.com/) bt forking on my git hub https://github.com/jahanzaibAhmad/demoapi*/
     this.subscription.push(this.homeService.getBlogs(1).subscribe({
       next: (data) => {
         this.blogInfo = data?.data;
@@ -52,6 +60,7 @@ export class HomeFormComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(): void {
+    /** unsubscribing all Subscribe observable */
     this.subscription.forEach(sub => sub.unsubscribe());
   }
 

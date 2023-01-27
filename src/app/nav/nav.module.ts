@@ -13,7 +13,7 @@ import { SharedModule } from '@app/shared/module/shared/shared.module';
   imports: [
     CommonModule,
     NavRoutingModule,
-    SharedModule
+    SharedModule /** Created shared module and added only module here which is going to use in whole app */
   ]
 })
 export class NavModule { }

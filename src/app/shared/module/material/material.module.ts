@@ -42,6 +42,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+ /** As we are using Material in whole app, added it here in shared module */
+ /** Note: We add only those material component which we are using in the app to create performance */
 @NgModule({
   declarations: [],
   imports: [

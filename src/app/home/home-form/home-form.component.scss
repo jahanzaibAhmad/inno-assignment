@@ -1,4 +1,4 @@
-@import 'src/color.scss';
+@import 'src/color.scss';  /** Added All color in Color.SCSS  */
 
 .grid-block {
     .material-icons {
@@ -13,7 +13,7 @@
 .total-text {
     font-weight: 700;
     font-size: 20px;
-    color: #839DB3;
+    color: $total-text;
 }
 
 .mat-grid-tile .mat-grid-tile-header,
@@ -28,7 +28,7 @@
     background: $white;
     padding: 5px;
     border-radius: 5px 5px 0px 0px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid $grid-header-color;
 
     .material-icons {
         font-size: 16px;

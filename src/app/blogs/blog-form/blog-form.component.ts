@@ -15,7 +15,7 @@ export class BlogFormComponent {
 
   blogInfo!: BlogsModel[];
   subscription: Subscription[] = [];
-  title: string = 'Home';
+  title: string = 'Home';/** Title/Breadcrumb and Descrition also come from rounte if define there and getting directly in page bar componenet */
   description: string = 'Blog Page Description';
 
   constructor(
@@ -46,6 +46,7 @@ export class BlogFormComponent {
 
 
   ngOnDestroy(): void {
+    /** unsubscribing all Subscribe observable */
     this.subscription.forEach(sub => sub.unsubscribe());
   }
 
