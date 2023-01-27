@@ -7,11 +7,10 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
-  endpoint: string = '';
+  endpoint: string = 'users';
   constructor(private http: HttpClient) { }
 
   getUsers(id: number): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/users');
     return this.http.get(environment.apiUrl + this.endpoint + '/' + id)
       .pipe(map((data: any) => data));
   }

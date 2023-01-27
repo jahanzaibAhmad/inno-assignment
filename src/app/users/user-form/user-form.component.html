@@ -1,7 +1,7 @@
-<app-page-bar> </app-page-bar>
+<app-page-bar (toggleClick)="toggle($event)"> </app-page-bar>
 
 
-<!-- <app-user-block-list [allUsers]="allUsers"></app-user-block-list> -->
+<app-user-list  [hidden]="isGrid" [allUsers]="allUsers"></app-user-list>
+<app-user-block-list *ngIf="isGrid" [allUsers]="allUsers"></app-user-block-list>
 
-<app-user-list [allUsers]="allUsers"></app-user-list>
 

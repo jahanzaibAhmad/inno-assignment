@@ -1,5 +1,6 @@
+@import 'src/color.scss';
 .card-body{
-    background: white;
+    background: $white;
     padding: 10px;
     border-radius: 5px;
 }
@@ -8,7 +9,7 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    border: 1px solid blue;
+    border: 2px solid $primary-color;
     margin: 0px;
 }
 
@@ -21,4 +22,8 @@
 .pr{
     position: relative;
     min-width: 200px;
+}
+
+.p-color{
+   color: $primary-color;
 }

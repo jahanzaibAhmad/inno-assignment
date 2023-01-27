@@ -31,3 +31,17 @@
     height: 25px;
     padding: 4px;
 }
+
+span.list-btn {
+    float: right;
+    padding: 5px;
+    cursor: pointer;
+    .material-icons{
+        border: 1px solid #d7d7d7;
+
+        &.selected{
+            color: $primary-color;
+        }
+    }
+}
+

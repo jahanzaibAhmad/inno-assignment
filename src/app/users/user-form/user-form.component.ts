@@ -12,12 +12,12 @@ export class UserFormComponent implements OnInit, OnDestroy {
   dtTrigger: Subject<any> = new Subject<any>();
 
   allUsers: any;
+  isGrid: boolean = false;
 
   constructor(
     private usersService: UsersService
-  ) {
+  ) { }
 
-  }
   ngOnInit(): void {
     this.getUsers();
   }
@@ -25,21 +25,21 @@ export class UserFormComponent implements OnInit, OnDestroy {
   getUsers() {
     this.usersService.getUsers(1).subscribe({
       next: (data) => {
-        data.forEach((element: any) => {
-          element.image = 'assets/images/home-industry.png'
-        });
-        this.allUsers = data;
+        this.allUsers = data?.data;
       },
       error: (error) => {
         console.log('There was an error in retrieving data from the server');
       }
     });
+  }
 
-
+  toggle(val: boolean){
+    this.isGrid = val;
   }
 
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
+
 }

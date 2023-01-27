@@ -1,9 +1,8 @@
 <div class="card-row">
     <div class="card" *ngFor="let user of allUsers">
         <div class="circle">
-            <img [src]="user.image" alt="" srcset="">
+            <img [src]="user.imageurl" alt="" srcset="">
             <div class="inner-circle">
-                <!-- <img src="assets/images/profile-Image.png" alt="" srcset=""> -->
                 <span class="material-icons">
                     play_circle_filled
                 </span>
@@ -11,68 +10,7 @@
         </div>
         <div class="text">
             <div class="heading">{{user.name}}</div>
-            <div class="sub-heading">{{user.website}}</div>
+            <div class="sub-heading">{{user.designation}}</div>
         </div>
     </div>
-    <!-- <div class="card">
-        <div class="circle">
-            <img src="assets/images/profile-Image.png" alt="" srcset="">
-            <div class="inner-circle">
-                <img src="assets/images/profile-Image.png" alt="" srcset="">
-               </div>
-        </div>
-        <div class="text">
-            <div class="heading">Lorem Ipsum</div>
-            <div class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="circle">
-            <img src="assets/images/profile-Image.png" alt="" srcset="">
-            <div class="inner-circle">
-                <img src="assets/images/profile-Image.png" alt="" srcset="">
-               </div>
-        </div>
-        <div class="text">
-            <div class="heading">Lorem Ipsum</div>
-            <div class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="circle">
-            <img src="assets/images/profile-Image.png" alt="" srcset="">
-            <div class="inner-circle">
-                <img src="assets/images/profile-Image.png" alt="" srcset="">
-               </div>
-        </div>
-        <div class="text">
-            <div class="heading">Lorem Ipsum</div>
-            <div class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="circle">
-            <img src="assets/images/profile-Image.png" alt="" srcset="">
-            <div class="inner-circle">
-                <img src="assets/images/profile-Image.png" alt="" srcset="">
-               </div>
-        </div>
-        <div class="text">
-            <div class="heading">Lorem Ipsum</div>
-            <div class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        </div>
-    </div>
-    <div class="card">
-        <div class="circle">
-            <img src="assets/images/profile-Image.png" alt="" srcset="">
-            <div class="inner-circle">
-                <img src="assets/images/profile-Image.png" alt="" srcset="">
-               </div>
-        </div>
-        <div class="text">
-            <div class="heading">Lorem Ipsum</div>
-            <div class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-        </div>
-    </div> -->
-
 </div>

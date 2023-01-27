@@ -3,16 +3,22 @@
         <mat-icon>apps</mat-icon>
     </button>
     <span>Home</span>
-
-
 </mat-toolbar> -->
-<div class="page-toolbar">  <button mat-icon-button >
-    <mat-icon>apps</mat-icon>
-</button>
-<span class="heading"> Home</span>
 
-<div class="detail"> Yes</div>
+<div class="page-toolbar"> <button mat-icon-button>
+        <mat-icon>apps</mat-icon>
+    </button>
+    <span class="heading"> Home</span>
+    <span class="list-btn">
+        <span class="material-icons" [class.selected]="!isGrid"  (click)="toggle(false)">
+            list
+        </span>
+        <span class="material-icons" [class.selected]="isGrid" (click)="toggle(true)">
+            view_comfy
+        </span>
+       
+    </span>
+
+    <div class="detail"> Yes</div>
 
 </div>
-
-
