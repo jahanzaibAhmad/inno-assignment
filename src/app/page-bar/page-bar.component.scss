@@ -19,10 +19,9 @@
     .detail {
         padding: 10px;
         font-size: 12px;
-        background: #F8FBFD;
+        background: $page-bar-color;
         height: 15px;
     }
-
 }
 
 
@@ -36,12 +35,12 @@ span.list-btn {
     float: right;
     padding: 5px;
     cursor: pointer;
-    .material-icons{
-        border: 1px solid #d7d7d7;
 
-        &.selected{
+    .material-icons {
+        border: 1px solid $page-bar-border;
+
+        &.selected {
             color: $primary-color;
         }
     }
 }
-

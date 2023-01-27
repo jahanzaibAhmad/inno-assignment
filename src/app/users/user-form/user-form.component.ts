@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { UsersService } from '../shared/users.service';
 
 @Component({
@@ -16,6 +16,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
 
   title: string = 'Home';
   description: string = '';
+  subscription: Subscription[] = [];
 
 
   constructor(
@@ -27,7 +28,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
   }
 
   getUsers() {
-    this.usersService.getUsers(1).subscribe({
+    this.subscription.push(this.usersService.getUsers(1).subscribe({
       next: (data) => {
         this.allUsers = data?.data;
         this.description = 'Total user : ' + (data?.data?.length ?? 0);
@@ -35,7 +36,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
       error: (error) => {
         console.log('There was an error in retrieving data from the server');
       }
-    });
+    }));
   }
 
   toggle(val: boolean){
@@ -45,6 +46,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
+    this.subscription.forEach(sub => sub.unsubscribe());
   }
 
 }
