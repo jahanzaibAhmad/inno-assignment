@@ -8,7 +8,7 @@
 <div class="page-toolbar"> <button mat-icon-button>
         <mat-icon>apps</mat-icon>
     </button>
-    <span class="heading"> Home</span>
+    <span class="heading"> {{heading}}</span>
     <span class="list-btn">
         <span class="material-icons" [class.selected]="!isGrid"  (click)="toggle(false)">
             list
@@ -19,6 +19,6 @@
        
     </span>
 
-    <div class="detail"> Yes</div>
+    <div class="detail"> {{description}}</div>
 
 </div>

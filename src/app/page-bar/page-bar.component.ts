@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-bar',
@@ -6,6 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./page-bar.component.scss']
 })
 export class PageBarComponent {
+
+@Input() heading!: string;
+@Input() description!: string;
 
   @Output() toggleClick = new EventEmitter<boolean>();
 

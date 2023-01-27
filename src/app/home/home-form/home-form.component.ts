@@ -14,7 +14,8 @@ export class HomeFormComponent implements OnInit, OnDestroy {
   tiles!: HomeModel[];
   blogInfo!: BlogsModel[];
   subscription: Subscription[] = [];
-
+  title: string = 'Home';
+  description: string = 'Home Page Description';
 
 
   constructor(

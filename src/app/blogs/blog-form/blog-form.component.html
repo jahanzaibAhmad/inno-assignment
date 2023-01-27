@@ -1,5 +1,5 @@
 
-<app-page-bar> </app-page-bar>
+<app-page-bar [heading]="title" [description]="description"> </app-page-bar>
 <ng-container *ngFor="let item of blogInfo; let index = index;">
     <mat-card class="home-card">
         <mat-card-content class="home-card-content">

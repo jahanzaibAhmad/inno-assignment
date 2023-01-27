@@ -15,6 +15,8 @@ export class BlogFormComponent {
 
   blogInfo!: BlogsModel[];
   subscription: Subscription[] = [];
+  title: string = 'Home';
+  description: string = 'Blog Page Description';
 
   constructor(
     private blogsService: BlogsService

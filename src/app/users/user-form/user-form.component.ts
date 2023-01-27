@@ -14,6 +14,10 @@ export class UserFormComponent implements OnInit, OnDestroy {
   allUsers: any;
   isGrid: boolean = false;
 
+  title: string = 'Home';
+  description: string = '';
+
+
   constructor(
     private usersService: UsersService
   ) { }
@@ -26,6 +30,7 @@ export class UserFormComponent implements OnInit, OnDestroy {
     this.usersService.getUsers(1).subscribe({
       next: (data) => {
         this.allUsers = data?.data;
+        this.description = 'Total user : ' + (data?.data?.length ?? 0);
       },
       error: (error) => {
         console.log('There was an error in retrieving data from the server');
