@@ -4,7 +4,8 @@
   <mat-toolbar-row>
     <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
       aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+      <mat-icon  *ngIf="!drawer.opened">menu</mat-icon>
+      <mat-icon  *ngIf="drawer.opened">close</mat-icon>
     </button>
     <span>
       <img src="assets/images/logo.png" />
