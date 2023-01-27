@@ -1,20 +1,14 @@
 @import 'src/color.scss';
 
-.grid-block{
+.grid-block {
     .material-icons {
         font-size: 41px;
         color: $primary-color;
     }
-    
+
 }
 
-.total {
-    font-weight: 700;
-    font-size: 40px;
-    padding-top: 90px;
-    padding-left: 13px;
-    width: 100%;
-}
+
 
 .total-text {
     font-weight: 700;
@@ -25,6 +19,7 @@
 .mat-grid-tile .mat-grid-tile-header,
 .mat-grid-tile .mat-grid-tile-footer {
     background-color: $white;
+    color: black;
 }
 
 .grid-header {
@@ -34,10 +29,38 @@
     padding: 5px;
     border-radius: 5px 5px 0px 0px;
     border-bottom: 1px solid #f0f0f0;
-    .material-icons{
-    font-size: 16px;
+
+    .material-icons {
+        font-size: 16px;
     }
 }
-.mat-grid-tile-header{
-    flex-direction: row-reverse;
+
+.grid-block {
+    .mat-grid-tile-header {
+        flex-direction: row-reverse;
+    }
+
+    .total {
+        font-weight: 700;
+        font-size: 40px;
+        padding-top: 90px;
+        padding-left: 13px;
+        width: 100%;
+    }
+}
+
+.grid-plain {
+    .mat-grid-tile .mat-grid-tile-header,
+    .mat-grid-tile .mat-grid-tile-footer {
+        height: 150px;
+        img {
+            width: 150px;
+            height: 80px;
+        }
+    }
+    .total {
+        width: 100%;
+        margin-left: 16px;
+        font-weight: bold;
+    }
 }

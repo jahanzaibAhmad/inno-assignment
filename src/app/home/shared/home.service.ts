@@ -9,6 +9,7 @@ import { map, Observable } from 'rxjs';
 export class HomeService {
 
   endpoint = 'posts';
+  endpointBlog = 'blogs';
   constructor(
     private http: HttpClient,
   ) { }
@@ -17,4 +18,10 @@ export class HomeService {
     return this.http.get(environment.apiUrl + this.endpoint + '/' + id)
       .pipe(map((data: any) => data));
   }
+
+  getBlogs(id: number): Observable<any> {
+    return this.http.get(environment.apiUrl + this.endpointBlog + '/' + id)
+    .pipe(map((data: any) => data));
+  }
+
 }

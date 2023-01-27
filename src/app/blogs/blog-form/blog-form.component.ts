@@ -1,7 +1,10 @@
+
+
+
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { BlogsModel } from '../shared/blogs.model';
 import { BlogsService } from '../shared/blogs.service';
-
 
 @Component({
   selector: 'app-blog-form',
@@ -10,7 +13,8 @@ import { BlogsService } from '../shared/blogs.service';
 })
 export class BlogFormComponent {
 
-  tiles!: BlogsModel[];
+  blogInfo!: BlogsModel[];
+  subscription: Subscription[] = [];
 
   constructor(
     private blogsService: BlogsService
@@ -21,21 +25,26 @@ export class BlogFormComponent {
   }
 
   getBlogs() {
-    this.blogsService.getBlogs(1).subscribe({
+    this.subscription.push(this.blogsService.getBlogs(1).subscribe({
       next: (data) => {
-        this.tiles = data?.data;
+        this.blogInfo = data?.data;
       },
-      error: (error) => {
+      error: () => {
         console.log('There was an error in retrieving data from the server');
       }
-    });
+    }));
+  }
 
-
+  isExpand(idx: number) {
+    const eleExpand: any = document.getElementById('expand' + idx);
+    eleExpand.style.height = 'auto';
+    const eleRead: any = document.getElementById('read' + idx);
+    eleRead.firstChild.style.display = 'none';
   }
 
 
   ngOnDestroy(): void {
-
+    this.subscription.forEach(sub => sub.unsubscribe());
   }
 
 }

@@ -1,20 +1,20 @@
+
 <app-page-bar> </app-page-bar>
-
-
-
-<mat-grid-list cols="4" rowHeight="100px" gutterSize="13px" class="grid-block">
-    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
-        <!-- <img src="./assets/Dotnettricks.png"> -->
-
-        <mat-grid-tile-header>
-            <span class="material-icons">
-                {{tile.icon}}
-            </span>
-        </mat-grid-tile-header>
-        <span class="total"> {{tile.amount}}</span>
-        <mat-grid-tile-footer>
-            <span class="total-text">{{tile.text}} </span>
-        </mat-grid-tile-footer>
-
-    </mat-grid-tile>
-</mat-grid-list>
+<ng-container *ngFor="let item of blogInfo; let index = index;">
+    <mat-card class="home-card">
+        <mat-card-content class="home-card-content">
+            <img mat-card-image [src]="item.imageurl" alt="Photo of a Shiba Inu">
+            <div>
+                <h3 class="right-insider">{{item.text}}</h3>
+                <label [id]="'expand'+index" style="height: 28px;" class="right-insider desc">
+                    <span>{{item.description}}</span>
+                </label>
+                <a class="read-more" [id]="'read'+index" (click)="isExpand(index)"><u>Read More</u></a>
+                <div class="footer-div">
+                    <span class="material-icons">{{item.dateicon}}</span><span>{{item.datecreated}}</span>
+                    <span class="footer-span material-icons">{{item.usericon}}</span><span>{{item.username}}</span>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</ng-container>

@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BlogsModel } from '@app/blogs/shared/blogs.model';
+import { Subscription } from 'rxjs';
 import { HomeModel } from '../shared/home.model';
 import { HomeService } from '../shared/home.service';
 
@@ -10,12 +12,9 @@ import { HomeService } from '../shared/home.service';
 
 export class HomeFormComponent implements OnInit, OnDestroy {
   tiles!: HomeModel[];
-  // tiles: Tile[] = [
-  //   { text: 'Total Orders', amount: '345', cols: 1, rows: 2, color: 'white', icon: 'shopping_cart' },
-  //   { text: 'Total Expenses', amount: '267', cols: 1, rows: 2, color: 'white', icon: 'save' },
-  //   { text: 'Total Revenue', amount: '345', cols: 1, rows: 2, color: 'white', icon: 'assessment' },
-  //   { text: 'New Users', amount: '345', cols: 1, rows: 2, color: 'white', icon: 'person' },
-  // ];
+  blogInfo!: BlogsModel[];
+  subscription: Subscription[] = [];
+
 
 
   constructor(
@@ -24,24 +23,35 @@ export class HomeFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getCards();
+    this.getBlogs();
   }
 
   getCards() {
-    this.homeService.getCards(1).subscribe({
+    this.subscription.push(this.homeService.getCards(1).subscribe({
       next: (data) => {
         this.tiles = data?.data;
       },
       error: (error) => {
         console.log('There was an error in retrieving data from the server');
       }
-    });
+    }));
+  }
 
 
+  getBlogs() {
+    this.subscription.push(this.homeService.getBlogs(1).subscribe({
+      next: (data) => {
+        this.blogInfo = data?.data;
+      },
+      error: () => {
+        console.log('There was an error in retrieving data from the server');
+      }
+    }));
   }
 
 
   ngOnDestroy(): void {
-
+    this.subscription.forEach(sub => sub.unsubscribe());
   }
 
 

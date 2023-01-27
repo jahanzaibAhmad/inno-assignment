@@ -35,22 +35,29 @@
     </span> Recent Blogs
 </div>
 
-<mat-grid-list cols="4" rowHeight="100px" gutterSize="0px">
-    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
-        <!-- <img src="./assets/Dotnettricks.png"> -->
+<mat-grid-list cols="4" rowHeight="160px" gutterSize="0px" class="grid-plain">
+    <mat-grid-tile *ngFor="let item of blogInfo; let index = index" [colspan]="item.cols" [rowspan]="item.rows">
+        <mat-grid-tile-header>
+            <img [src]="item.imageurl">
+        </mat-grid-tile-header>
+        <span class="total"> {{item.text}}</span>
+        <mat-grid-tile-footer>
+            <span class="total-text">{{item.description}} </span>
+        </mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>
 
-        <!-- <mat-grid-tile-header>
-            <span class="material-icons">
-                {{tile.icon}}
-            </span>
-        </mat-grid-tile-header> -->
+<!-- <mat-grid-list cols="4" rowHeight="100px" gutterSize="0px">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+
+
         <span class="">  <img mat-card-image src="assets/images/home-industry.png" /></span>
         <mat-grid-tile-footer>
             <span class="total-text">{{'Lorem ipsum dolor sit amet'}} </span>
         </mat-grid-tile-footer>
 
     </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
 
 
 
